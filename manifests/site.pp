@@ -13,7 +13,7 @@ node default {
 
     class { 'apache': }
 
-    apache::mod { 'mod_rewrite': }
+    apache::mod { 'rewrite': }
 
     apache::vhost { 'nashvillest.com':
         serveraliases => [
