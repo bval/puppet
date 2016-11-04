@@ -4,18 +4,18 @@ class hardening {
 
     # Basic firewall rules
     ufw::allow { 'allow-ssh-from-all':
-        port => 5344,
+        port => '5344',
     }
 
     # rate-limit SSH
-    ufw::limit { 22: }
+    ufw::limit { '5344': }
 
     ufw::allow { 'allow-ssh-from-all':
-        port => 80,
+        port => '80',
     }
 
     ufw::allow { 'allow-ssh-from-all':
-        port => 443,
+        port => '443',
     }
 
 }
