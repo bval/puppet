@@ -52,4 +52,30 @@ class users {
         require => File['/home/cwage/.ssh']
     }
 
+    user { 'codeyh':
+        ensure     => 'present',
+        home       => '/home/codeyh',
+        managehome => true,
+        comment    => 'Stephen Yeargin',
+        groups     => ['www-data', 'sudo' ],
+        shell      => '/bin/bash',
+    }
+
+    file { '/home/codeyh/.ssh':
+        ensure  => directory,
+        owner   => 'codeyh',
+        group   => 'codeyh',
+        mode    => '0700',
+        require => User['codeyh']
+    }
+
+    ssh_authorized_key { 'codeyh':
+        ensure  => present,
+        user    => 'codeyh',
+        type    => 'ssh-rsa',
+        key     => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQClF53F3WnXEcZ81uBckjCmgm8ozW6NR/ywubtnxTFLV5aR3YMgTzlw2NoLIGU3sJvyygf2rhdiWIE5OzKjDi0OCoaR3CTnAWo3QwzdGXiwuHxiXcH/VW5mfeKEvHL7sQ8SVjh+O1fMa4it2H/+tudLSM//T0qq6tT6qNlxO/Q8vb+KnuK7yjyrywFm+cFWN+O2ZOLFnmHTemzj5WxcqWPFSUaQToK8+zka97isyC2bj+SnfIsFYgxQLwPzknIFl9KwI7BCUK9MlmvaCgHIsuu/1VACVtGcXe7sRxBaACQmOyistFmL0kOMQ0gUOwC/qtZlIYsYEfuukJDIT3OGlgLN',
+        require => File['/home/cwage/.ssh']
+    }
+
+
 }
