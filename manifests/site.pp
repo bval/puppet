@@ -4,7 +4,11 @@
 node default {
     # puppet config
     include puppet
+
+    # adds our users and ssh keys
     include users
+
+    # basic LAMP config for wordpress
     include lamp
 
     # misc packages
