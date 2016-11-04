@@ -11,6 +11,16 @@ node default {
         remove_default_accounts => true,
     }
 
+    apache::vhost { 'nashvillest.com':
+        serveraliases => [
+            'www.nashvillest.com'
+        ],
+        port          => '80',
+        docroot       => '/var/www/nashvillest.com',
+        docroot_owner => 'www-data',
+        docroot_group => 'www-data',
+    }
+
     # misc packages
     package { [
         'vim',
