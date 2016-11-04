@@ -10,11 +10,11 @@ class hardening {
     # rate-limit SSH
     ufw::limit { '5344': }
 
-    ufw::allow { 'allow-ssh-from-all':
+    ufw::allow { 'allow-http-from-all':
         port => '80',
     }
 
-    ufw::allow { 'allow-ssh-from-all':
+    ufw::allow { 'allow-https-from-all':
         port => '443',
     }
 
