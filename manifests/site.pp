@@ -11,6 +11,8 @@ node default {
         remove_default_accounts => true,
     }
 
+    class { 'apache': }
+
     apache::vhost { 'nashvillest.com':
         serveraliases => [
             'www.nashvillest.com'
