@@ -6,10 +6,10 @@ node default {
     include puppet
 
 
-class { '::mysql::server':
-  root_password           => hiera('mysql_root_password'),
-  remove_default_accounts => true,
-}
+    class { '::mysql::server':
+        root_password           => hiera('mysql_root_password'),
+        remove_default_accounts => true,
+    }
 
     # misc packages
     package { [
