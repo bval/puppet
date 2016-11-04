@@ -1,7 +1,5 @@
 class hardening {
 
-    package {'ufw': ensure => 'installed' }
-
     include ufw
 
     # Basic firewall rules
