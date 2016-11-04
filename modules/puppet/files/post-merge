@@ -1,6 +1,6 @@
 #!/bin/bash -e
 ## Run Puppet locally using puppet apply
-/opt/puppetlabs/bin/puppet apply /etc/puppet/manifests/site.pp --modulepath=modules/
+output=$(/opt/puppetlabs/bin/puppet apply /etc/puppet/manifests/site.pp --modulepath=modules/)
 
 ## Log status of the Puppet run
 if [ $? -eq 0 ]
@@ -9,5 +9,6 @@ then
     exit 0
 else
     /usr/bin/logger -i "Puppet has ran into an error, please run Puppet manually" -t "puppet-run"
+    echo "$output"
     exit 1
 fi
