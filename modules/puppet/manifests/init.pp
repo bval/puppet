@@ -21,7 +21,7 @@ class puppet {
 
     cron { 'puppet-apply':
         ensure  => present,
-        command => 'cd /etc/puppet ; /usr/bin/git pull',
+        command => 'cd /etc/puppet ; /usr/bin/git pull -q',
         user    => root,
         minute  => '*/1',
         require => File['post-hook'],
