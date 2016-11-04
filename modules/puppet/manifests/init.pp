@@ -27,5 +27,4 @@ class puppet {
         require => File['post-hook'],
     }
 
-
 }
