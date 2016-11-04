@@ -2,11 +2,12 @@
 class users {
 
     user { 'cwage':
-        ensure  => 'present',
-        home    => '/home/cwage',
-        comment => 'Chris Wage',
-        groups  => ['www-data', 'sudo' ],
-        shell   => '/bin/bash',
+        ensure     => 'present',
+        home       => '/home/cwage',
+        managehome => true,
+        comment    => 'Chris Wage',
+        groups     => ['www-data', 'sudo' ],
+        shell      => '/bin/bash',
     }
 
     ssh_authorized_key { 'cwage@quietlife.net':
@@ -18,11 +19,12 @@ class users {
     }
 
     user { 'stephenyeargin':
-        ensure  => 'present',
-        home    => '/home/stephenyeargin',
-        comment => 'Stephen Yeargin',
-        groups  => ['www-data', 'sudo' ],
-        shell   => '/bin/bash',
+        ensure     => 'present',
+        home       => '/home/stephenyeargin',
+        managehome => true,
+        comment    => 'Stephen Yeargin',
+        groups     => ['www-data', 'sudo' ],
+        shell      => '/bin/bash',
     }
 
     ssh_authorized_key { 'stephenyeargin':
