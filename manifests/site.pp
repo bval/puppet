@@ -11,6 +11,9 @@ node default {
     # basic LAMP config for wordpress
     include lamp
 
+    # Basic hardening/security stuff
+    include hardening
+
     # misc packages
     package { [
         'vim',
