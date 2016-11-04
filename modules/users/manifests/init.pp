@@ -11,10 +11,10 @@ class users {
     }
 
     file { '/home/cwage/.ssh':
-        ensure => directory,
-        owner => 'cwage',
-        group => 'cwage',
-        mode => 0700,
+        ensure  => directory,
+        owner   => 'cwage',
+        group   => 'cwage',
+        mode    => '0700',
         require => User['cwage']
     }
 
@@ -37,10 +37,10 @@ class users {
     }
 
     file { '/home/syeargin/.ssh':
-        ensure => directory,
-        owner => 'syeargin',
-        group => 'syeargin',
-        mode => 0700,
+        ensure  => directory,
+        owner   => 'syeargin',
+        group   => 'syeargin',
+        mode    => '0700',
         require => User['syeargin']
     }
 
