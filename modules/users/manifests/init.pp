@@ -5,7 +5,7 @@ class users {
         ensure  => 'present',
         home    => '/home/cwage',
         comment => 'Chris Wage',
-        groups  => 'www-data, sudo',
+        groups  => ['www-data', 'sudo' ],
         shell   => '/bin/bash',
     }
 
