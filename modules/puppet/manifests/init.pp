@@ -19,7 +19,7 @@ class puppet {
         ensure  => present,
         command => "cd /etc/puppet ; /usr/bin/git pull",
         user    => root,
-        minute  => '*/30',
+        minute  => '*/5',
         require => File['post-hook'],
     }
 
