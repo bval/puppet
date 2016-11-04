@@ -1,7 +1,7 @@
 # Base puppet configuration and cron to run regularly
 class puppet {
 
-    package {'puppet': ensure => 'installed' }
+    package {'puppet-agent': ensure => 'installed' }
 
     file { '/etc/puppet/puppet.conf':
         owner  => root,
