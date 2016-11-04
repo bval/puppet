@@ -4,6 +4,7 @@
 node default {
     # puppet config
     include puppet
+    include users
 
 
     class { '::mysql::server':
