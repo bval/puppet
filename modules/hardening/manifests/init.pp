@@ -18,6 +18,8 @@ class hardening {
         port => '443',
     }
 
+    package {'openssh-server': ensure => 'installed' }
+
     # More sane SSH config
     file { '/etc/ssh/sshd_config':
         ensure => 'present',
