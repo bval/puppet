@@ -1,5 +1,5 @@
-# puppet apply -v manifests/init.pp --modulepath=modules/ --noop --test
-# puppet apply -v manifests/init.pp --modulepath=modules/
+# puppet apply -v manifests/site.pp --modulepath=modules/ --noop --test
+# puppet apply -v manifests/site.pp --modulepath=modules/
 
 node default {
     # puppet config
